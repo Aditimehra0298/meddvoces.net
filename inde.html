@@ -240,7 +240,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </ul>
 </li>
 <li id="menu-item-582" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-582"><a href="https://www.meddevices.net/iso-134852016-training/" data-hover="Trainings"><span class="nav-menu-item-inside" data-hover="Trainings">Trainings</span></a></li>
-<li id="menu-item-compliance" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-compliance"><a href="#compliance" data-hover="Compliance" onclick="showCompliancePage()"><span class="nav-menu-item-inside" data-hover="Compliance">Compliance</span></a></li>
+<li id="menu-item-compliance" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-compliance"><a href="#compliance" data-hover="Compliance"><span class="nav-menu-item-inside" data-hover="Compliance">Compliance</span></a></li>
 <li id="menu-item-859" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-859"><a href="https://www.meddevices.net/contact-us/" data-hover="Contact Us"><span class="nav-menu-item-inside" data-hover="Contact Us">Contact Us</span></a></li>
 <li class="hidden menu-mobile-meta">	<span class="icon-inline">
 	<span class="svg-icon icon-phone-outline"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon" width="512" height="512" viewBox="0 0 512 512"><path d="M451 374c-15.88-16-54.34-39.35-73-48.76-24.3-12.24-26.3-13.24-45.4.95-12.74 9.47-21.21 17.93-36.12 14.75s-47.31-21.11-75.68-49.39-47.34-61.62-50.53-76.48 5.41-23.23 14.79-36c13.22-18 12.22-21 .92-45.3-8.81-18.9-32.84-57-48.9-72.8C119.9 44 119.9 47 108.83 51.6A160.15 160.15 0 0083 65.37C67 76 58.12 84.83 51.91 98.1s-9 44.38 23.07 102.64 54.57 88.05 101.14 134.49S258.5 406.64 310.85 436c64.76 36.27 89.6 29.2 102.91 23s22.18-15 32.83-31a159.09 159.09 0 0013.8-25.8C465 391.17 468 391.17 451 374z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/></svg></span>		<span>
@@ -720,7 +720,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		</article><!-- #post-382 -->
 		
 		<!-- Compliance Page Section -->
-		<article id="compliance-page" class="compliance-page" style="display: none;">
+		<article id="compliance-page" class="compliance-page">
 			<div class="entry-content">
 				<div class="compliance-header" style="text-align: center; padding: 40px 0; background: linear-gradient(135deg, #0575bf, #00bcbc); color: white;">
 					<h1 style="font-size: 2.5em; margin-bottom: 20px; font-weight: 700;">Compliance Management</h1>
@@ -1064,65 +1064,18 @@ var wpcf7r = {"ajax_url":"https:\/\/www.meddevices.net\/wp-admin\/admin-ajax.php
 <script src="https://www.meddevices.net/wp-content/themes/exs/assets/vendors/glightbox/glightbox.min.js?ver=1.0.0" id="exs-glightbox-script-js"></script>
 <script src="https://www.meddevices.net/wp-content/themes/exs/assets/vendors/glightbox/glightbox.init.js?ver=1.0.0" id="exs-glightbox-init-script-js"></script>
 
-<!-- Compliance Page JavaScript -->
+<!-- Simple Compliance Navigation -->
 <script>
-function showCompliancePage() {
-    // Hide the main content
-    const mainContent = document.querySelector('#post-382');
-    if (mainContent) {
-        mainContent.style.display = 'none';
-    }
-    
-    // Show the compliance page
-    const compliancePage = document.getElementById('compliance-page');
-    if (compliancePage) {
-        compliancePage.style.display = 'block';
-    }
-    
-    // Scroll to top
-    window.scrollTo(0, 0);
-    
-    // Update active menu item
-    const menuItems = document.querySelectorAll('.menu-item');
-    menuItems.forEach(item => item.classList.remove('current-menu-item'));
-    
-    const complianceMenuItem = document.querySelector('.menu-item-compliance');
-    if (complianceMenuItem) {
-        complianceMenuItem.classList.add('current-menu-item');
-    }
-}
-
-// Add back to home functionality
-function showHomePage() {
-    // Show the main content
-    const mainContent = document.querySelector('#post-382');
-    if (mainContent) {
-        mainContent.style.display = 'block';
-    }
-    
-    // Hide the compliance page
-    const compliancePage = document.getElementById('compliance-page');
-    if (compliancePage) {
-        compliancePage.style.display = 'none';
-    }
-    
-    // Update active menu item
-    const menuItems = document.querySelectorAll('.menu-item');
-    menuItems.forEach(item => item.classList.remove('current-menu-item'));
-    
-    const homeMenuItem = document.querySelector('.menu-item-home');
-    if (homeMenuItem) {
-        homeMenuItem.classList.add('current-menu-item');
-    }
-}
-
-// Add event listener to home menu item
+// Simple scroll to compliance section
 document.addEventListener('DOMContentLoaded', function() {
-    const homeMenuItem = document.querySelector('.menu-item-home a');
-    if (homeMenuItem) {
-        homeMenuItem.addEventListener('click', function(e) {
+    const complianceLink = document.querySelector('a[href="#compliance"]');
+    if (complianceLink) {
+        complianceLink.addEventListener('click', function(e) {
             e.preventDefault();
-            showHomePage();
+            const complianceSection = document.getElementById('compliance-page');
+            if (complianceSection) {
+                complianceSection.scrollIntoView({ behavior: 'smooth' });
+            }
         });
     }
 });
