@@ -784,47 +784,57 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					<button onclick="showHomePage()" style="background: white; color: #0575bf; padding: 10px 20px; border: none; border-radius: 5px; margin-top: 20px; cursor: pointer; font-weight: bold;">← Back to Home</button>
 				</div>
 				
-				<!-- ComplianceEye iframe with fallback -->
-				<div class="compliance-iframe-container" style="background: white; border-radius: 15px; box-shadow: 0 8px 30px rgba(0,0,0,0.1); padding: 20px; margin-bottom: 30px;">
-					<div style="text-align: center; margin-bottom: 20px;">
-						<h3 style="color: #21467f; margin-bottom: 10px;">Compliance Registration Form</h3>
-						<p style="color: #95a4a5;">Complete the form below to register for compliance services</p>
+				<!-- ComplianceEye Registration Access -->
+				<div class="compliance-registration-container" style="background: white; border-radius: 15px; box-shadow: 0 8px 30px rgba(0,0,0,0.1); padding: 40px; margin-bottom: 30px;">
+					<div style="text-align: center; margin-bottom: 30px;">
+						<h3 style="color: #21467f; margin-bottom: 15px; font-size: 2em;">ComplianceEye Registration</h3>
+						<p style="color: #95a4a5; font-size: 1.1em;">Access the ComplianceEye registration system to get started with your compliance journey</p>
 					</div>
 					
-					<!-- Iframe with fallback -->
-					<div id="iframe-container" style="position: relative;">
+					<!-- Direct Access Options -->
+					<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 30px;">
+						<!-- Option 1: Direct Link -->
+						<div style="background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 30px; border-radius: 15px; text-align: center; border: 2px solid #e3e4e8;">
+							<div style="background: #0575bf; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 24px;">🌐</div>
+							<h4 style="color: #21467f; margin-bottom: 15px;">Direct Access</h4>
+							<p style="color: #95a4a5; margin-bottom: 20px;">Open ComplianceEye registration in a new tab for the best experience</p>
+							<a href="https://complianceeye.netlify.app/register" target="_blank" style="background: #0575bf; color: white; padding: 15px 30px; text-decoration: none; border-radius: 8px; font-weight: bold; display: inline-block;">
+								Open Registration Form
+							</a>
+						</div>
+						
+						<!-- Option 2: Contact Form -->
+						<div style="background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 30px; border-radius: 15px; text-align: center; border: 2px solid #e3e4e8;">
+							<div style="background: #00bcbc; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 24px;">📞</div>
+							<h4 style="color: #21467f; margin-bottom: 15px;">Contact Us</h4>
+							<p style="color: #95a4a5; margin-bottom: 20px;">Get personalized assistance with your compliance registration</p>
+							<button onclick="showContactForm()" style="background: #00bcbc; color: white; padding: 15px 30px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">
+								Contact MedDevices
+							</button>
+						</div>
+					</div>
+					
+					<!-- Iframe Attempt (Hidden by default) -->
+					<div id="iframe-section" style="display: none;">
+						<div style="text-align: center; margin-bottom: 20px;">
+							<h4 style="color: #21467f; margin-bottom: 10px;">Embedded Registration Form</h4>
+							<p style="color: #95a4a5;">If the form below doesn't load, please use the options above</p>
+						</div>
 						<iframe 
-							id="compliance-iframe"
 							src="https://complianceeye.netlify.app/register" 
 							width="100%" 
-							height="800" 
+							height="600" 
 							frameborder="0" 
-							style="border: none; border-radius: 10px; min-height: 800px;"
-							title="ComplianceEye Registration"
-							onload="handleIframeLoad()"
-							onerror="handleIframeError()">
+							style="border: none; border-radius: 10px; min-height: 600px;"
+							title="ComplianceEye Registration">
 						</iframe>
-						
-						<!-- Loading indicator -->
-						<div id="iframe-loading" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; background: rgba(255,255,255,0.9); padding: 20px; border-radius: 10px;">
-							<div style="color: #0575bf; font-size: 18px; margin-bottom: 10px;">Loading ComplianceEye Registration...</div>
-							<div style="width: 40px; height: 40px; border: 4px solid #e3e4e8; border-top: 4px solid #0575bf; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto;"></div>
-						</div>
-						
-						<!-- Fallback content if iframe fails -->
-						<div id="iframe-fallback" style="display: none; text-align: center; padding: 40px;">
-							<h4 style="color: #21467f; margin-bottom: 20px;">Unable to load ComplianceEye Registration</h4>
-							<p style="color: #95a4a5; margin-bottom: 30px;">The registration form is temporarily unavailable. Please use the alternative methods below:</p>
-							
-							<div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-								<a href="https://complianceeye.netlify.app/register" target="_blank" style="background: #0575bf; color: white; padding: 15px 30px; text-decoration: none; border-radius: 8px; font-weight: bold;">
-									Open in New Tab
-								</a>
-								<button onclick="showContactForm()" style="background: #00bcbc; color: white; padding: 15px 30px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">
-									Contact Us Instead
-								</button>
-							</div>
-						</div>
+					</div>
+					
+					<!-- Toggle Button -->
+					<div style="text-align: center; margin-top: 20px;">
+						<button onclick="toggleIframe()" style="background: #21467f; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 14px;">
+							Try Embedded Form
+						</button>
 					</div>
 				</div>
 				
@@ -1252,6 +1262,19 @@ setTimeout(function() {
 function showContactForm() {
     // Scroll to contact section or show contact form
     alert('Please contact us at +91-9871231133 or info@meddevices.net for compliance registration assistance.');
+}
+
+function toggleIframe() {
+    const iframeSection = document.getElementById('iframe-section');
+    const button = event.target;
+    
+    if (iframeSection.style.display === 'none') {
+        iframeSection.style.display = 'block';
+        button.textContent = 'Hide Embedded Form';
+    } else {
+        iframeSection.style.display = 'none';
+        button.textContent = 'Try Embedded Form';
+    }
 }
 
 function showCompliancePage() {
