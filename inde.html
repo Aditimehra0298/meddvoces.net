@@ -240,7 +240,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </ul>
 </li>
 <li id="menu-item-582" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-582"><a href="https://www.meddevices.net/iso-134852016-training/" data-hover="Trainings"><span class="nav-menu-item-inside" data-hover="Trainings">Trainings</span></a></li>
-<li id="menu-item-compliance" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-compliance"><a href="#compliance" data-hover="Compliance"><span class="nav-menu-item-inside" data-hover="Compliance">Compliance</span></a></li>
+<li id="menu-item-compliance" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-compliance"><a href="#" data-hover="Compliance" onclick="openComplianceModal()"><span class="nav-menu-item-inside" data-hover="Compliance">Compliance</span></a></li>
 <li id="menu-item-859" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-859"><a href="https://www.meddevices.net/contact-us/" data-hover="Contact Us"><span class="nav-menu-item-inside" data-hover="Contact Us">Contact Us</span></a></li>
 <li class="hidden menu-mobile-meta">	<span class="icon-inline">
 	<span class="svg-icon icon-phone-outline"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon" width="512" height="512" viewBox="0 0 512 512"><path d="M451 374c-15.88-16-54.34-39.35-73-48.76-24.3-12.24-26.3-13.24-45.4.95-12.74 9.47-21.21 17.93-36.12 14.75s-47.31-21.11-75.68-49.39-47.34-61.62-50.53-76.48 5.41-23.23 14.79-36c13.22-18 12.22-21 .92-45.3-8.81-18.9-32.84-57-48.9-72.8C119.9 44 119.9 47 108.83 51.6A160.15 160.15 0 0083 65.37C67 76 58.12 84.83 51.91 98.1s-9 44.38 23.07 102.64 54.57 88.05 101.14 134.49S258.5 406.64 310.85 436c64.76 36.27 89.6 29.2 102.91 23s22.18-15 32.83-31a159.09 159.09 0 0013.8-25.8C465 391.17 468 391.17 451 374z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/></svg></span>		<span>
@@ -720,7 +720,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		</article><!-- #post-382 -->
 		
 		<!-- Compliance Page Section -->
-		<article id="compliance-page" class="compliance-page">
+		<article id="compliance-page" class="compliance-page" style="display: none;">
 			<div class="entry-content">
 				<div class="compliance-header" style="text-align: center; padding: 40px 0; background: linear-gradient(135deg, #0575bf, #00bcbc); color: white;">
 					<h1 style="font-size: 2.5em; margin-bottom: 20px; font-weight: 700;">Compliance Management</h1>
@@ -729,57 +729,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				
 				<div class="compliance-content" style="padding: 40px 20px; background: #f9fbff;">
 					<div class="container" style="max-width: 1200px; margin: 0 auto;">
-						<!-- Compliance Information Section -->
-						<div class="compliance-info-section" style="background: white; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); padding: 40px; margin-bottom: 30px;">
-							<h2 style="color: #21467f; text-align: center; margin-bottom: 30px; font-size: 2.2em;">Medical Device Compliance Services</h2>
-							
-							<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 40px;">
-								<div style="text-align: center; padding: 20px;">
-									<div style="background: #0575bf; color: white; width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 2em;">🏥</div>
-									<h3 style="color: #21467f; margin-bottom: 15px;">FDA Registration</h3>
-									<p>Complete FDA medical device registration and listing services for US market access.</p>
-								</div>
-								
-								<div style="text-align: center; padding: 20px;">
-									<div style="background: #00bcbc; color: white; width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 2em;">🇪🇺</div>
-									<h3 style="color: #21467f; margin-bottom: 15px;">EU MDR Compliance</h3>
-									<p>European Medical Device Regulation compliance and CE marking services.</p>
-								</div>
-								
-								<div style="text-align: center; padding: 20px;">
-									<div style="background: #dd6856; color: white; width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 2em;">📋</div>
-									<h3 style="color: #21467f; margin-bottom: 15px;">ISO 13485:2016</h3>
-									<p>Quality management system implementation and certification support.</p>
-								</div>
-								
-								<div style="text-align: center; padding: 20px;">
-									<div style="background: #a34f4f; color: white; width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 2em;">📊</div>
-									<h3 style="color: #21467f; margin-bottom: 15px;">Technical Documentation</h3>
-									<p>Comprehensive technical documentation and regulatory submissions.</p>
-								</div>
-							</div>
-							
-							<div style="background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 30px; border-radius: 10px; text-align: center;">
-								<h3 style="color: #21467f; margin-bottom: 20px;">Why Choose Our Compliance Services?</h3>
-								<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-									<div style="text-align: left;">
-										<h4 style="color: #0575bf; margin-bottom: 10px;">✓ Expert Team</h4>
-										<p>Certified professionals with years of regulatory experience</p>
-									</div>
-									<div style="text-align: left;">
-										<h4 style="color: #0575bf; margin-bottom: 10px;">✓ Fast Turnaround</h4>
-										<p>Quick processing and efficient service delivery</p>
-									</div>
-									<div style="text-align: left;">
-										<h4 style="color: #0575bf; margin-bottom: 10px;">✓ Global Reach</h4>
-										<p>Services for US, EU, UK, and other major markets</p>
-									</div>
-									<div style="text-align: left;">
-										<h4 style="color: #0575bf; margin-bottom: 10px;">✓ Ongoing Support</h4>
-										<p>Continuous compliance monitoring and updates</p>
-									</div>
-								</div>
-							</div>
+						<div class="compliance-iframe-container" style="background: white; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); overflow: hidden;">
+							<iframe 
+								id="compliance-iframe"
+								src="https://complianceeye.netlify.app/register" 
+								width="100%" 
+								height="800" 
+								frameborder="0" 
+								style="border: none; min-height: 800px;"
+								title="ComplianceEye Registration System">
+							</iframe>
 						</div>
 						
 						<div class="compliance-info" style="margin-top: 30px; text-align: center;">
@@ -802,42 +761,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 									<p>Pre-audit preparation and compliance monitoring</p>
 								</div>
 							</div>
-							
-							<!-- Compliance Contact Form -->
-							<div style="margin-top: 40px; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
-								<h3 style="color: #21467f; margin-bottom: 20px;">Request Compliance Consultation</h3>
-								<form style="max-width: 600px; margin: 0 auto; text-align: left;">
-									<div style="margin-bottom: 20px;">
-										<label style="display: block; margin-bottom: 5px; color: #21467f; font-weight: bold;">Company Name:</label>
-										<input type="text" style="width: 100%; padding: 10px; border: 2px solid #e3e4e8; border-radius: 5px; font-size: 16px;" placeholder="Enter your company name">
-									</div>
-									<div style="margin-bottom: 20px;">
-										<label style="display: block; margin-bottom: 5px; color: #21467f; font-weight: bold;">Contact Person:</label>
-										<input type="text" style="width: 100%; padding: 10px; border: 2px solid #e3e4e8; border-radius: 5px; font-size: 16px;" placeholder="Enter your name">
-									</div>
-									<div style="margin-bottom: 20px;">
-										<label style="display: block; margin-bottom: 5px; color: #21467f; font-weight: bold;">Email:</label>
-										<input type="email" style="width: 100%; padding: 10px; border: 2px solid #e3e4e8; border-radius: 5px; font-size: 16px;" placeholder="Enter your email address">
-									</div>
-									<div style="margin-bottom: 20px;">
-										<label style="display: block; margin-bottom: 5px; color: #21467f; font-weight: bold;">Compliance Service Needed:</label>
-										<select style="width: 100%; padding: 10px; border: 2px solid #e3e4e8; border-radius: 5px; font-size: 16px;">
-											<option>FDA Registration</option>
-											<option>EU MDR Compliance</option>
-											<option>ISO 13485:2016</option>
-											<option>CE Marking</option>
-											<option>Technical Documentation</option>
-											<option>Audit Support</option>
-											<option>Other</option>
-										</select>
-									</div>
-									<div style="margin-bottom: 20px;">
-										<label style="display: block; margin-bottom: 5px; color: #21467f; font-weight: bold;">Message:</label>
-										<textarea style="width: 100%; padding: 10px; border: 2px solid #e3e4e8; border-radius: 5px; font-size: 16px; height: 100px;" placeholder="Describe your compliance requirements"></textarea>
-									</div>
-									<button type="submit" style="background: linear-gradient(135deg, #0575bf, #00bcbc); color: white; padding: 12px 30px; border: none; border-radius: 5px; font-size: 16px; font-weight: bold; cursor: pointer; width: 100%;">Request Consultation</button>
-								</form>
-							</div>
 						</div>
 					</div>
 				</div>
@@ -849,6 +772,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		</div><!-- #columns -->
 		</div><!-- .container -->
 	</div><!-- #main -->
+	
+	<!-- Compliance Modal -->
+	<div id="complianceModal" class="compliance-modal" style="display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8);">
+		<div class="modal-content" style="background-color: white; margin: 2% auto; padding: 0; border: none; border-radius: 10px; width: 95%; max-width: 1200px; height: 90%; position: relative; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
+			<div class="modal-header" style="background: linear-gradient(135deg, #0575bf, #00bcbc); color: white; padding: 20px; border-radius: 10px 10px 0 0; display: flex; justify-content: space-between; align-items: center;">
+				<h2 style="margin: 0; font-size: 1.5em;">ComplianceEye Registration</h2>
+				<span class="close" onclick="closeComplianceModal()" style="color: white; font-size: 28px; font-weight: bold; cursor: pointer; line-height: 1;">&times;</span>
+			</div>
+			<div class="modal-body" style="height: calc(100% - 80px); padding: 0;">
+				<iframe 
+					src="https://complianceeye.netlify.app/register" 
+					width="100%" 
+					height="100%" 
+					frameborder="0" 
+					style="border: none; border-radius: 0 0 10px 10px;"
+					title="ComplianceEye Registration">
+				</iframe>
+			</div>
+		</div>
+	</div>
+	
 	<div id="bottom-wrap"
 	 class="container-1400 "
 	>
@@ -1064,18 +1008,65 @@ var wpcf7r = {"ajax_url":"https:\/\/www.meddevices.net\/wp-admin\/admin-ajax.php
 <script src="https://www.meddevices.net/wp-content/themes/exs/assets/vendors/glightbox/glightbox.min.js?ver=1.0.0" id="exs-glightbox-script-js"></script>
 <script src="https://www.meddevices.net/wp-content/themes/exs/assets/vendors/glightbox/glightbox.init.js?ver=1.0.0" id="exs-glightbox-init-script-js"></script>
 
-<!-- Simple Compliance Navigation -->
+<!-- Compliance Page JavaScript -->
 <script>
-// Simple scroll to compliance section
+function showCompliancePage() {
+    // Hide the main content
+    const mainContent = document.querySelector('#post-382');
+    if (mainContent) {
+        mainContent.style.display = 'none';
+    }
+    
+    // Show the compliance page
+    const compliancePage = document.getElementById('compliance-page');
+    if (compliancePage) {
+        compliancePage.style.display = 'block';
+    }
+    
+    // Scroll to top
+    window.scrollTo(0, 0);
+    
+    // Update active menu item
+    const menuItems = document.querySelectorAll('.menu-item');
+    menuItems.forEach(item => item.classList.remove('current-menu-item'));
+    
+    const complianceMenuItem = document.querySelector('.menu-item-compliance');
+    if (complianceMenuItem) {
+        complianceMenuItem.classList.add('current-menu-item');
+    }
+}
+
+// Add back to home functionality
+function showHomePage() {
+    // Show the main content
+    const mainContent = document.querySelector('#post-382');
+    if (mainContent) {
+        mainContent.style.display = 'block';
+    }
+    
+    // Hide the compliance page
+    const compliancePage = document.getElementById('compliance-page');
+    if (compliancePage) {
+        compliancePage.style.display = 'none';
+    }
+    
+    // Update active menu item
+    const menuItems = document.querySelectorAll('.menu-item');
+    menuItems.forEach(item => item.classList.remove('current-menu-item'));
+    
+    const homeMenuItem = document.querySelector('.menu-item-home');
+    if (homeMenuItem) {
+        homeMenuItem.classList.add('current-menu-item');
+    }
+}
+
+// Add event listener to home menu item
 document.addEventListener('DOMContentLoaded', function() {
-    const complianceLink = document.querySelector('a[href="#compliance"]');
-    if (complianceLink) {
-        complianceLink.addEventListener('click', function(e) {
+    const homeMenuItem = document.querySelector('.menu-item-home a');
+    if (homeMenuItem) {
+        homeMenuItem.addEventListener('click', function(e) {
             e.preventDefault();
-            const complianceSection = document.getElementById('compliance-page');
-            if (complianceSection) {
-                complianceSection.scrollIntoView({ behavior: 'smooth' });
-            }
+            showHomePage();
         });
     }
 });
@@ -1126,5 +1117,39 @@ document.getElementById('amount').value = total;
 document.getElementById('total_amount').innerHTML = total;
 }
 	</script>
+
+<!-- Compliance Modal JavaScript -->
+<script>
+function openComplianceModal() {
+    const modal = document.getElementById('complianceModal');
+    if (modal) {
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
+}
+
+function closeComplianceModal() {
+    const modal = document.getElementById('complianceModal');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+}
+
+// Close modal when clicking outside of it
+window.onclick = function(event) {
+    const modal = document.getElementById('complianceModal');
+    if (event.target === modal) {
+        closeComplianceModal();
+    }
+}
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeComplianceModal();
+    }
+});
+</script>
 
 <!-- plugin=object-cache-pro client=phpredis metric#hits=4364 metric#misses=58 metric#hit-ratio=98.7 metric#bytes=724102 metric#prefetches=0 metric#store-reads=85 metric#store-writes=22 metric#store-hits=132 metric#store-misses=44 metric#sql-queries=35 metric#ms-total=930.95 metric#ms-cache=25.81 metric#ms-cache-avg=0.2435 metric#ms-cache-ratio=2.8 sample#redis-hits=932674 sample#redis-misses=56407 sample#redis-hit-ratio=94.3 sample#redis-ops-per-sec=66 sample#redis-evicted-keys=0 sample#redis-used-memory=12704496 sample#redis-used-memory-rss=18857984 sample#redis-memory-fragmentation-ratio=1.5 sample#redis-connected-clients=2 sample#redis-tracking-clients=0 sample#redis-rejected-connections=0 sample#redis-keys=237 -->
