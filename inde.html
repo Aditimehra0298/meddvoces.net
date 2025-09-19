@@ -240,7 +240,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </ul>
 </li>
 <li id="menu-item-582" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-582"><a href="https://www.meddevices.net/iso-134852016-training/" data-hover="Trainings"><span class="nav-menu-item-inside" data-hover="Trainings">Trainings</span></a></li>
-<li id="menu-item-compliance" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-compliance"><a href="#" data-hover="Compliance" onclick="openComplianceModal()"><span class="nav-menu-item-inside" data-hover="Compliance">Compliance</span></a></li>
+<li id="menu-item-compliance" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-compliance"><a href="https://complianceeye.netlify.app/register" data-hover="Compliance" target="_blank" rel="noopener noreferrer"><span class="nav-menu-item-inside" data-hover="Compliance">Compliance</span></a></li>
 <li id="menu-item-859" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-859"><a href="https://www.meddevices.net/contact-us/" data-hover="Contact Us"><span class="nav-menu-item-inside" data-hover="Contact Us">Contact Us</span></a></li>
 <li class="hidden menu-mobile-meta">	<span class="icon-inline">
 	<span class="svg-icon icon-phone-outline"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon" width="512" height="512" viewBox="0 0 512 512"><path d="M451 374c-15.88-16-54.34-39.35-73-48.76-24.3-12.24-26.3-13.24-45.4.95-12.74 9.47-21.21 17.93-36.12 14.75s-47.31-21.11-75.68-49.39-47.34-61.62-50.53-76.48 5.41-23.23 14.79-36c13.22-18 12.22-21 .92-45.3-8.81-18.9-32.84-57-48.9-72.8C119.9 44 119.9 47 108.83 51.6A160.15 160.15 0 0083 65.37C67 76 58.12 84.83 51.91 98.1s-9 44.38 23.07 102.64 54.57 88.05 101.14 134.49S258.5 406.64 310.85 436c64.76 36.27 89.6 29.2 102.91 23s22.18-15 32.83-31a159.09 159.09 0 0013.8-25.8C465 391.17 468 391.17 451 374z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/></svg></span>		<span>
@@ -773,25 +773,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		</div><!-- .container -->
 	</div><!-- #main -->
 	
-	<!-- Compliance Modal -->
-	<div id="complianceModal" class="compliance-modal" style="display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8);">
-		<div class="modal-content" style="background-color: white; margin: 2% auto; padding: 0; border: none; border-radius: 10px; width: 95%; max-width: 1200px; height: 90%; position: relative; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
-			<div class="modal-header" style="background: linear-gradient(135deg, #0575bf, #00bcbc); color: white; padding: 20px; border-radius: 10px 10px 0 0; display: flex; justify-content: space-between; align-items: center;">
-				<h2 style="margin: 0; font-size: 1.5em;">ComplianceEye Registration</h2>
-				<span class="close" onclick="closeComplianceModal()" style="color: white; font-size: 28px; font-weight: bold; cursor: pointer; line-height: 1;">&times;</span>
-			</div>
-			<div class="modal-body" style="height: calc(100% - 80px); padding: 0;">
-				<iframe 
-					src="https://complianceeye.netlify.app/register" 
-					width="100%" 
-					height="100%" 
-					frameborder="0" 
-					style="border: none; border-radius: 0 0 10px 10px;"
-					title="ComplianceEye Registration">
-				</iframe>
-			</div>
-		</div>
-	</div>
 	
 	<div id="bottom-wrap"
 	 class="container-1400 "
@@ -1118,38 +1099,5 @@ document.getElementById('total_amount').innerHTML = total;
 }
 	</script>
 
-<!-- Compliance Modal JavaScript -->
-<script>
-function openComplianceModal() {
-    const modal = document.getElementById('complianceModal');
-    if (modal) {
-        modal.style.display = 'block';
-        document.body.style.overflow = 'hidden'; // Prevent background scrolling
-    }
-}
-
-function closeComplianceModal() {
-    const modal = document.getElementById('complianceModal');
-    if (modal) {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto'; // Restore scrolling
-    }
-}
-
-// Close modal when clicking outside of it
-window.onclick = function(event) {
-    const modal = document.getElementById('complianceModal');
-    if (event.target === modal) {
-        closeComplianceModal();
-    }
-}
-
-// Close modal with Escape key
-document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape') {
-        closeComplianceModal();
-    }
-});
-</script>
 
 <!-- plugin=object-cache-pro client=phpredis metric#hits=4364 metric#misses=58 metric#hit-ratio=98.7 metric#bytes=724102 metric#prefetches=0 metric#store-reads=85 metric#store-writes=22 metric#store-hits=132 metric#store-misses=44 metric#sql-queries=35 metric#ms-total=930.95 metric#ms-cache=25.81 metric#ms-cache-avg=0.2435 metric#ms-cache-ratio=2.8 sample#redis-hits=932674 sample#redis-misses=56407 sample#redis-hit-ratio=94.3 sample#redis-ops-per-sec=66 sample#redis-evicted-keys=0 sample#redis-used-memory=12704496 sample#redis-used-memory-rss=18857984 sample#redis-memory-fragmentation-ratio=1.5 sample#redis-connected-clients=2 sample#redis-tracking-clients=0 sample#redis-rejected-connections=0 sample#redis-keys=237 -->
