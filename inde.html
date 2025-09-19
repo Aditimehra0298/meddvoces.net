@@ -784,22 +784,48 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					<button onclick="showHomePage()" style="background: white; color: #0575bf; padding: 10px 20px; border: none; border-radius: 5px; margin-top: 20px; cursor: pointer; font-weight: bold;">← Back to Home</button>
 				</div>
 				
-				<!-- ComplianceEye iframe -->
+				<!-- ComplianceEye iframe with fallback -->
 				<div class="compliance-iframe-container" style="background: white; border-radius: 15px; box-shadow: 0 8px 30px rgba(0,0,0,0.1); padding: 20px; margin-bottom: 30px;">
 					<div style="text-align: center; margin-bottom: 20px;">
 						<h3 style="color: #21467f; margin-bottom: 10px;">Compliance Registration Form</h3>
 						<p style="color: #95a4a5;">Complete the form below to register for compliance services</p>
 					</div>
-					<iframe 
-						src="https://complianceeye.netlify.app/register" 
-						width="100%" 
-						height="800" 
-						frameborder="0" 
-						style="border: none; border-radius: 10px; min-height: 800px;"
-						title="ComplianceEye Registration"
-						onload="console.log('Iframe loaded successfully')"
-						onerror="console.log('Iframe failed to load')">
-					</iframe>
+					
+					<!-- Iframe with fallback -->
+					<div id="iframe-container" style="position: relative;">
+						<iframe 
+							id="compliance-iframe"
+							src="https://complianceeye.netlify.app/register" 
+							width="100%" 
+							height="800" 
+							frameborder="0" 
+							style="border: none; border-radius: 10px; min-height: 800px;"
+							title="ComplianceEye Registration"
+							onload="handleIframeLoad()"
+							onerror="handleIframeError()">
+						</iframe>
+						
+						<!-- Loading indicator -->
+						<div id="iframe-loading" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; background: rgba(255,255,255,0.9); padding: 20px; border-radius: 10px;">
+							<div style="color: #0575bf; font-size: 18px; margin-bottom: 10px;">Loading ComplianceEye Registration...</div>
+							<div style="width: 40px; height: 40px; border: 4px solid #e3e4e8; border-top: 4px solid #0575bf; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto;"></div>
+						</div>
+						
+						<!-- Fallback content if iframe fails -->
+						<div id="iframe-fallback" style="display: none; text-align: center; padding: 40px;">
+							<h4 style="color: #21467f; margin-bottom: 20px;">Unable to load ComplianceEye Registration</h4>
+							<p style="color: #95a4a5; margin-bottom: 30px;">The registration form is temporarily unavailable. Please use the alternative methods below:</p>
+							
+							<div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+								<a href="https://complianceeye.netlify.app/register" target="_blank" style="background: #0575bf; color: white; padding: 15px 30px; text-decoration: none; border-radius: 8px; font-weight: bold;">
+									Open in New Tab
+								</a>
+								<button onclick="showContactForm()" style="background: #00bcbc; color: white; padding: 15px 30px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">
+									Contact Us Instead
+								</button>
+							</div>
+						</div>
+					</div>
 				</div>
 				
 				<!-- MedDevices Info Section -->
@@ -1177,8 +1203,57 @@ document.getElementById('total_amount').innerHTML = total;
 }
 	</script>
 
+<!-- Compliance Page CSS -->
+<style>
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+</style>
+
 <!-- Compliance Page JavaScript -->
 <script>
+// Iframe loading handlers
+function handleIframeLoad() {
+    console.log('Iframe loaded successfully');
+    const loading = document.getElementById('iframe-loading');
+    const fallback = document.getElementById('iframe-fallback');
+    if (loading) loading.style.display = 'none';
+    if (fallback) fallback.style.display = 'none';
+}
+
+function handleIframeError() {
+    console.log('Iframe failed to load');
+    const loading = document.getElementById('iframe-loading');
+    const fallback = document.getElementById('iframe-fallback');
+    if (loading) loading.style.display = 'none';
+    if (fallback) fallback.style.display = 'block';
+}
+
+// Timeout fallback - show fallback after 10 seconds if iframe doesn't load
+setTimeout(function() {
+    const iframe = document.getElementById('compliance-iframe');
+    const loading = document.getElementById('iframe-loading');
+    const fallback = document.getElementById('iframe-fallback');
+    
+    if (iframe && loading && fallback) {
+        try {
+            // Try to access iframe content to check if it loaded
+            iframe.contentWindow.document;
+        } catch (e) {
+            // If we can't access iframe content, show fallback
+            console.log('Iframe timeout - showing fallback');
+            loading.style.display = 'none';
+            fallback.style.display = 'block';
+        }
+    }
+}, 10000);
+
+function showContactForm() {
+    // Scroll to contact section or show contact form
+    alert('Please contact us at +91-9871231133 or info@meddevices.net for compliance registration assistance.');
+}
+
 function showCompliancePage() {
     console.log('showCompliancePage called'); // Debug log
     
