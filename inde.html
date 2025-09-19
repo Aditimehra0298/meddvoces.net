@@ -774,24 +774,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	</div><!-- #main -->
 	
 	<!-- Compliance Page with ComplianceEye iframe -->
-	<div id="compliance-page" class="compliance-page" style="display: none;">
+	<div id="compliance-page" class="compliance-page" style="display: none; position: relative; z-index: 1000; background: #f9fbff; min-height: 100vh;">
 		<div class="container-fluid pt-5 pb-5">
 			<div class="container">
 				<!-- Compliance Header -->
 				<div class="compliance-header" style="text-align: center; padding: 40px 0; background: linear-gradient(135deg, #0575bf, #00bcbc); color: white; border-radius: 15px; margin-bottom: 30px;">
 					<h1 style="font-size: 2.5em; margin-bottom: 15px; font-weight: 700;">ComplianceEye Registration</h1>
 					<p style="font-size: 1.2em; margin-bottom: 0;">Powered by MedDevices - Your Trusted Compliance Partner</p>
+					<button onclick="showHomePage()" style="background: white; color: #0575bf; padding: 10px 20px; border: none; border-radius: 5px; margin-top: 20px; cursor: pointer; font-weight: bold;">← Back to Home</button>
 				</div>
 				
 				<!-- ComplianceEye iframe -->
 				<div class="compliance-iframe-container" style="background: white; border-radius: 15px; box-shadow: 0 8px 30px rgba(0,0,0,0.1); padding: 20px; margin-bottom: 30px;">
+					<div style="text-align: center; margin-bottom: 20px;">
+						<h3 style="color: #21467f; margin-bottom: 10px;">Compliance Registration Form</h3>
+						<p style="color: #95a4a5;">Complete the form below to register for compliance services</p>
+					</div>
 					<iframe 
 						src="https://complianceeye.netlify.app/register" 
 						width="100%" 
 						height="800" 
 						frameborder="0" 
 						style="border: none; border-radius: 10px; min-height: 800px;"
-						title="ComplianceEye Registration">
+						title="ComplianceEye Registration"
+						onload="console.log('Iframe loaded successfully')"
+						onerror="console.log('Iframe failed to load')">
 					</iframe>
 				</div>
 				
@@ -1173,16 +1180,36 @@ document.getElementById('total_amount').innerHTML = total;
 <!-- Compliance Page JavaScript -->
 <script>
 function showCompliancePage() {
+    console.log('showCompliancePage called'); // Debug log
+    
     // Hide the main content
     const mainContent = document.querySelector('#main');
+    console.log('Main content found:', mainContent); // Debug log
     if (mainContent) {
         mainContent.style.display = 'none';
     }
     
+    // Hide footer and other elements that might interfere
+    const footer = document.querySelector('#footer');
+    if (footer) {
+        footer.style.display = 'none';
+    }
+    
+    const bottomWrap = document.querySelector('#bottom-wrap');
+    if (bottomWrap) {
+        bottomWrap.style.display = 'none';
+    }
+    
     // Show the compliance page
     const compliancePage = document.getElementById('compliance-page');
+    console.log('Compliance page found:', compliancePage); // Debug log
     if (compliancePage) {
         compliancePage.style.display = 'block';
+        compliancePage.style.position = 'relative';
+        compliancePage.style.zIndex = '9999';
+        compliancePage.style.background = '#f9fbff';
+        compliancePage.style.minHeight = '100vh';
+        console.log('Compliance page should now be visible'); // Debug log
     }
     
     // Scroll to top
@@ -1199,10 +1226,23 @@ function showCompliancePage() {
 }
 
 function showHomePage() {
+    console.log('showHomePage called'); // Debug log
+    
     // Show the main content
     const mainContent = document.querySelector('#main');
     if (mainContent) {
         mainContent.style.display = 'block';
+    }
+    
+    // Show footer and other elements
+    const footer = document.querySelector('#footer');
+    if (footer) {
+        footer.style.display = 'block';
+    }
+    
+    const bottomWrap = document.querySelector('#bottom-wrap');
+    if (bottomWrap) {
+        bottomWrap.style.display = 'block';
     }
     
     // Hide the compliance page
