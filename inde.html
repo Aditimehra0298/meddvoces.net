@@ -774,13 +774,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	</div><!-- #main -->
 	
 	<!-- Custom Compliance Page with MedDevices Branding -->
-	<div id="compliance-page" class="compliance-page" style="display: none; background: #f9fbff; min-height: 100vh;">
+	<div id="compliance-page" class="compliance-page" style="display: none; background: #f9fbff; min-height: 100vh; position: absolute; top: 0; left: 0; width: 100%; z-index: 9999;">
 		<div class="container-fluid pt-5 pb-5">
 			<div class="container">
 				<!-- Compliance Header -->
 				<div class="compliance-header" style="text-align: center; padding: 60px 0; background: linear-gradient(135deg, #0575bf, #00bcbc); color: white; border-radius: 15px; margin-bottom: 40px;">
 					<h1 style="font-size: 3em; margin-bottom: 20px; font-weight: 700;">ComplianceEye Registration</h1>
 					<p style="font-size: 1.3em; margin-bottom: 0;">Powered by MedDevices - Your Trusted Compliance Partner</p>
+					<button onclick="showHomePage()" style="background: white; color: #0575bf; padding: 10px 20px; border: none; border-radius: 5px; margin-top: 20px; cursor: pointer;">← Back to Home</button>
 				</div>
 				
 				<!-- Compliance Registration Form -->
@@ -1230,16 +1231,22 @@ document.getElementById('total_amount').innerHTML = total;
 <!-- Compliance Page JavaScript -->
 <script>
 function showCompliancePage() {
+    console.log('showCompliancePage called'); // Debug log
+    
     // Hide the main content
     const mainContent = document.querySelector('#main');
+    console.log('Main content found:', mainContent); // Debug log
     if (mainContent) {
         mainContent.style.display = 'none';
     }
     
     // Show the compliance page
     const compliancePage = document.getElementById('compliance-page');
+    console.log('Compliance page found:', compliancePage); // Debug log
     if (compliancePage) {
         compliancePage.style.display = 'block';
+        compliancePage.style.position = 'relative';
+        compliancePage.style.zIndex = '9999';
     }
     
     // Scroll to top
