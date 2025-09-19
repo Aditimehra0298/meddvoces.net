@@ -773,96 +773,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		</div><!-- .container -->
 	</div><!-- #main -->
 	
-	<!-- Custom Compliance Page with MedDevices Branding -->
-	<div id="compliance-page" class="compliance-page" style="display: none; background: #f9fbff; min-height: 100vh; position: absolute; top: 0; left: 0; width: 100%; z-index: 9999;">
+	<!-- Compliance Page with ComplianceEye iframe -->
+	<div id="compliance-page" class="compliance-page" style="display: none;">
 		<div class="container-fluid pt-5 pb-5">
 			<div class="container">
 				<!-- Compliance Header -->
-				<div class="compliance-header" style="text-align: center; padding: 60px 0; background: linear-gradient(135deg, #0575bf, #00bcbc); color: white; border-radius: 15px; margin-bottom: 40px;">
-					<h1 style="font-size: 3em; margin-bottom: 20px; font-weight: 700;">ComplianceEye Registration</h1>
-					<p style="font-size: 1.3em; margin-bottom: 0;">Powered by MedDevices - Your Trusted Compliance Partner</p>
-					<button onclick="showHomePage()" style="background: white; color: #0575bf; padding: 10px 20px; border: none; border-radius: 5px; margin-top: 20px; cursor: pointer;">← Back to Home</button>
+				<div class="compliance-header" style="text-align: center; padding: 40px 0; background: linear-gradient(135deg, #0575bf, #00bcbc); color: white; border-radius: 15px; margin-bottom: 30px;">
+					<h1 style="font-size: 2.5em; margin-bottom: 15px; font-weight: 700;">ComplianceEye Registration</h1>
+					<p style="font-size: 1.2em; margin-bottom: 0;">Powered by MedDevices - Your Trusted Compliance Partner</p>
 				</div>
 				
-				<!-- Compliance Registration Form -->
-				<div class="compliance-form-container" style="background: white; border-radius: 15px; box-shadow: 0 8px 30px rgba(0,0,0,0.1); padding: 50px; margin-bottom: 40px;">
+				<!-- ComplianceEye iframe -->
+				<div class="compliance-iframe-container" style="background: white; border-radius: 15px; box-shadow: 0 8px 30px rgba(0,0,0,0.1); padding: 20px; margin-bottom: 30px;">
+					<iframe 
+						src="https://complianceeye.netlify.app/register" 
+						width="100%" 
+						height="800" 
+						frameborder="0" 
+						style="border: none; border-radius: 10px; min-height: 800px;"
+						title="ComplianceEye Registration">
+					</iframe>
+				</div>
+				
+				<!-- MedDevices Info Section -->
+				<div class="compliance-info" style="background: white; border-radius: 15px; box-shadow: 0 8px 30px rgba(0,0,0,0.1); padding: 40px; margin-bottom: 30px;">
 					<div class="row">
 						<div class="col-md-8">
-							<h2 style="color: #21467f; margin-bottom: 30px; font-size: 2.2em;">Register for Compliance Services</h2>
-							<p style="color: #95a4a5; font-size: 1.1em; margin-bottom: 40px;">Complete the form below to get started with our comprehensive compliance management services.</p>
+							<h2 style="color: #21467f; margin-bottom: 20px; font-size: 2em;">Why Choose MedDevices for Compliance?</h2>
+							<p style="color: #95a4a5; font-size: 1.1em; margin-bottom: 30px;">We provide comprehensive compliance management services to help you navigate complex regulatory requirements.</p>
 							
-							<form id="complianceForm" style="max-width: 100%;">
-								<div class="row">
-									<div class="col-md-6" style="margin-bottom: 25px;">
-										<label style="display: block; margin-bottom: 8px; color: #21467f; font-weight: bold; font-size: 16px;">Company Name *</label>
-										<input type="text" name="company" required style="width: 100%; padding: 15px; border: 2px solid #e3e4e8; border-radius: 8px; font-size: 16px; transition: border-color 0.3s;" placeholder="Enter your company name">
-									</div>
-									<div class="col-md-6" style="margin-bottom: 25px;">
-										<label style="display: block; margin-bottom: 8px; color: #21467f; font-weight: bold; font-size: 16px;">Contact Person *</label>
-										<input type="text" name="contact" required style="width: 100%; padding: 15px; border: 2px solid #e3e4e8; border-radius: 8px; font-size: 16px; transition: border-color 0.3s;" placeholder="Enter your name">
-									</div>
-								</div>
-								
-								<div class="row">
-									<div class="col-md-6" style="margin-bottom: 25px;">
-										<label style="display: block; margin-bottom: 8px; color: #21467f; font-weight: bold; font-size: 16px;">Email Address *</label>
-										<input type="email" name="email" required style="width: 100%; padding: 15px; border: 2px solid #e3e4e8; border-radius: 8px; font-size: 16px; transition: border-color 0.3s;" placeholder="Enter your email">
-									</div>
-									<div class="col-md-6" style="margin-bottom: 25px;">
-										<label style="display: block; margin-bottom: 8px; color: #21467f; font-weight: bold; font-size: 16px;">Phone Number</label>
-										<input type="tel" name="phone" style="width: 100%; padding: 15px; border: 2px solid #e3e4e8; border-radius: 8px; font-size: 16px; transition: border-color 0.3s;" placeholder="Enter your phone number">
-									</div>
-								</div>
-								
-								<div class="row">
-									<div class="col-md-6" style="margin-bottom: 25px;">
-										<label style="display: block; margin-bottom: 8px; color: #21467f; font-weight: bold; font-size: 16px;">Compliance Service Needed *</label>
-										<select name="service" required style="width: 100%; padding: 15px; border: 2px solid #e3e4e8; border-radius: 8px; font-size: 16px; transition: border-color 0.3s;">
-											<option value="">Select a service</option>
-											<option value="fda-registration">FDA Registration</option>
-											<option value="eu-mdr">EU MDR Compliance</option>
-											<option value="iso-13485">ISO 13485:2016</option>
-											<option value="ce-marking">CE Marking</option>
-											<option value="technical-docs">Technical Documentation</option>
-											<option value="audit-support">Audit Support</option>
-											<option value="consultation">General Consultation</option>
-										</select>
-									</div>
-									<div class="col-md-6" style="margin-bottom: 25px;">
-										<label style="display: block; margin-bottom: 8px; color: #21467f; font-weight: bold; font-size: 16px;">Company Size</label>
-										<select name="company-size" style="width: 100%; padding: 15px; border: 2px solid #e3e4e8; border-radius: 8px; font-size: 16px; transition: border-color 0.3s;">
-											<option value="">Select company size</option>
-											<option value="startup">Startup (1-10 employees)</option>
-											<option value="small">Small (11-50 employees)</option>
-											<option value="medium">Medium (51-200 employees)</option>
-											<option value="large">Large (200+ employees)</option>
-										</select>
-									</div>
-								</div>
-								
-								<div style="margin-bottom: 25px;">
-									<label style="display: block; margin-bottom: 8px; color: #21467f; font-weight: bold; font-size: 16px;">Project Description *</label>
-									<textarea name="description" required rows="4" style="width: 100%; padding: 15px; border: 2px solid #e3e4e8; border-radius: 8px; font-size: 16px; transition: border-color 0.3s; resize: vertical;" placeholder="Describe your compliance requirements and project details"></textarea>
-								</div>
-								
-								<div style="margin-bottom: 30px;">
-									<label style="display: flex; align-items: center; color: #21467f; font-size: 16px; cursor: pointer;">
-										<input type="checkbox" name="terms" required style="margin-right: 10px; transform: scale(1.2);">
-										I agree to the <a href="#" style="color: #0575bf; text-decoration: underline;">Terms of Service</a> and <a href="#" style="color: #0575bf; text-decoration: underline;">Privacy Policy</a>
-									</label>
-								</div>
-								
-								<button type="submit" style="background: linear-gradient(135deg, #0575bf, #00bcbc); color: white; padding: 18px 40px; border: none; border-radius: 8px; font-size: 18px; font-weight: bold; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s; width: 100%; max-width: 300px;">
-									Submit Registration
-								</button>
-							</form>
-						</div>
-						
-						<div class="col-md-4">
-							<div style="background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 30px; border-radius: 15px; height: fit-content;">
-								<h3 style="color: #21467f; margin-bottom: 25px; font-size: 1.5em;">Why Choose MedDevices?</h3>
-								
-								<div style="margin-bottom: 20px;">
+							<div class="row">
+								<div class="col-md-6" style="margin-bottom: 20px;">
 									<div style="display: flex; align-items: center; margin-bottom: 15px;">
 										<div style="background: #0575bf; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-weight: bold;">✓</div>
 										<span style="color: #21467f; font-weight: 500;">Expert Regulatory Team</span>
@@ -871,6 +812,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 										<div style="background: #00bcbc; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-weight: bold;">✓</div>
 										<span style="color: #21467f; font-weight: 500;">Fast Turnaround Times</span>
 									</div>
+								</div>
+								<div class="col-md-6" style="margin-bottom: 20px;">
 									<div style="display: flex; align-items: center; margin-bottom: 15px;">
 										<div style="background: #dd6856; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-weight: bold;">✓</div>
 										<span style="color: #21467f; font-weight: 500;">Global Market Access</span>
@@ -880,23 +823,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 										<span style="color: #21467f; font-weight: 500;">Ongoing Support</span>
 									</div>
 								</div>
+							</div>
+						</div>
+						
+						<div class="col-md-4">
+							<div style="background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 30px; border-radius: 15px; height: fit-content;">
+								<h3 style="color: #21467f; margin-bottom: 20px; font-size: 1.5em;">Contact Information</h3>
+								<p style="color: #95a4a5; margin-bottom: 15px;"><strong>Phone:</strong> +91-9871231133</p>
+								<p style="color: #95a4a; margin-bottom: 15px;"><strong>Email:</strong> info@meddevices.net</p>
+								<p style="color: #95a4a; margin-bottom: 20px;"><strong>Website:</strong> www.meddevices.net</p>
 								
-								<div style="border-top: 2px solid #e3e4e8; padding-top: 20px; margin-top: 20px;">
-									<h4 style="color: #21467f; margin-bottom: 15px;">Contact Information</h4>
-									<p style="color: #95a4a5; margin-bottom: 10px;"><strong>Phone:</strong> +91-9871231133</p>
-									<p style="color: #95a4a; margin-bottom: 10px;"><strong>Email:</strong> info@meddevices.net</p>
-									<p style="color: #95a4a;"><strong>Website:</strong> www.meddevices.net</p>
-								</div>
+								<button onclick="showHomePage()" style="background: #21467f; color: white; padding: 12px 25px; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; width: 100%;">
+									← Back to Home
+								</button>
 							</div>
 						</div>
 					</div>
-				</div>
-				
-				<!-- Back to Home Button -->
-				<div style="text-align: center; margin-top: 40px;">
-					<button onclick="showHomePage()" style="background: #21467f; color: white; padding: 15px 30px; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; transition: background 0.3s;">
-						← Back to Home
-					</button>
 				</div>
 			</div>
 		</div>
@@ -1231,22 +1173,16 @@ document.getElementById('total_amount').innerHTML = total;
 <!-- Compliance Page JavaScript -->
 <script>
 function showCompliancePage() {
-    console.log('showCompliancePage called'); // Debug log
-    
     // Hide the main content
     const mainContent = document.querySelector('#main');
-    console.log('Main content found:', mainContent); // Debug log
     if (mainContent) {
         mainContent.style.display = 'none';
     }
     
     // Show the compliance page
     const compliancePage = document.getElementById('compliance-page');
-    console.log('Compliance page found:', compliancePage); // Debug log
     if (compliancePage) {
         compliancePage.style.display = 'block';
-        compliancePage.style.position = 'relative';
-        compliancePage.style.zIndex = '9999';
     }
     
     // Scroll to top
